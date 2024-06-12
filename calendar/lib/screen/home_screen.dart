@@ -1,6 +1,8 @@
 import 'package:calendar/component/main_calendar.dart';
 import 'package:flutter/material.dart';
 import 'package:calendar/component/schedule.dart';
+import 'package:calendar/component/schedule_bottom_sheet.dart';
+import 'package:calendar/component/today_banner.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super (key: key);
@@ -8,6 +10,15 @@ class HomeScreen extends StatefulWidget {
 
   @override
   State<HomeScreen> createState() => _HomeScreemState();
+
+class _HomeScreemState extends State<HomeScreen>{
+  late DateTime selectedDate;
+
+  @override
+  void initState() {
+    
+  }
+}
 
 
 }
@@ -36,9 +47,9 @@ class _HomeScreemState extends State<HomeScreen>{
 
 
 
-  void _onDaySelected(DateTime selectedDate, DateTime focusedDate) {
+  void _onDaySelected(DateTime newSelectedDate, DateTime focusedDate) {
     setState((){
-      this.selectedDate = selectedDate;
+      selectedDate = newSelectedDate;
     });
   }
 }
